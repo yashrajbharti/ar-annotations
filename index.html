@@ -6,7 +6,7 @@
     <script src="image-aframe.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: set-top-box.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
 
       <a-assets>
@@ -26,7 +26,7 @@
         <!-- <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
           animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"> -->
         </a-entity>
-        
+
         <a-entity mindar-image-target="targetIndex: 2">
         <a-plane src="#card" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
         <!-- <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
