@@ -13,6 +13,8 @@
       <a-assets>
     <img id="card" src="card.jpeg" />
     <a-asset-item id="avatarModel" src="./model/scene.gltf"></a-asset-item>
+    <a-asset-item id="arrow" src="./arrow/scene.gltf"></a-asset-item>
+
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
@@ -23,9 +25,10 @@
         </a-entity>
 
         <a-entity mindar-image-target="targetIndex: 1">
-        <a-plane src="#card" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
-        <!-- <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
-          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"> -->
+          <a-entity geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double" position="0 0 0"></a-entity>
+
+          <a-entity gltf-model="#arrow" rotation="0 90 0 " position="0 0 0.1" scale="0.5 0.5 0.5"></a-entity>
+
         </a-entity>
 
 
