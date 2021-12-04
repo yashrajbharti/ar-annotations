@@ -16,7 +16,21 @@ Scan the above QR code and follow the process to experience the live demo.
 <img src="hardware_back.jpg" width="1080px" height="auto"/>
 
 * Try changing the device's (AR supported phones) orientation or just placing a part of the object in front of the camera feed. All times the annotations will be placed correctly.
-
+  
+## What ifs?
+  
+When the image is too long (like the front of the audio player) and all of it can't come in the same camera feed for detection. The first and easy solution is, no need to worry, as long as there are enough features to recognise, the AR annotations will load up. The second, less preferable solution is, to split the image and use multi-tracks and position separately. However, in our case, as the features were sufficient, we go with solution one. Even if some part of the image target is placed in front of camera feed, the annotations easily loaded up. Try with the left part of audio player shown below:
+  
+<img src="hardware_front_left.jpg" width="1080px" height="auto"/>
+  
+One cool thing about the AR loaded up here is the Animated glTF model that uses animation-mixer component and gives a real effect of DVD opening and closing. However, it is just to demonstrate the power of AR and our main focus remains the annotation part. Now comes the common question, why not to split the image and create targets.mind. We shouldn't because firstly, the long image will still have enough features to load up AR with only, say 40% of it coming in the camera feed. Secondly, if the user places the part of object where you split from, we might not have enough features of either of the split parts, coming in the camera feed. So, unfortuneately in that case neither of the annotations will be able to load, as we have only, say 20% of the features of each of the split image targets. So, with the solution we are using, such cases won't arise.
+  
+Let's try the right part of the audio player.
+  
+<img src="hardware_front_right.jpg" width="1080px" height="auto"/>
+  
+As we haven't enabled multi-tracks, so simultaneus detection on more than one image target won't work here. Having the default multi-track value 1 improves the performance of the AR and we want that to happen.
+  
 ## Wrapping up
 
 The above setup works for the Audio Player I chose. The same code with a few adjuestments in entity's postion will allow it to work on any object (hardware device). Only changes to be made for accomplishing this are changing the target image and creating it's respective targets.mind file. Lastly, the smoothness value is set to high, it may cause a *lazy effect* on detection but this actually is helpful to prevent flickering of the annotations.
