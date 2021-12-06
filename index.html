@@ -7,7 +7,7 @@
     <script src="image-aframe.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
 
 
       <a-assets>
@@ -51,7 +51,7 @@
 
         </a-entity>
 
-        <a-entity mindar-image-target="targetIndex: 1 smoothCount: 0 smoothTolerance: 0.0001 smoothThreshold: 0">
+        <a-entity mindar-image-target="targetIndex: 1">
           <a-entity geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double; color:#f00" position="0.025 0.05 0" scale="0.03 0.03 0.03"></a-entity>
           <a-entity text="value:+12Volts; color:#f00; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1 1 1" position="0.45 0.08 0"></a-entity>
 
