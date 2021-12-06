@@ -52,7 +52,7 @@
         </a-entity>
 
         <a-entity mindar-image-target="targetIndex: 1">
-          <a-entity text="value:To know more about this audio player, tap here; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0 0.28 0" id="FAQ" class="clickable" ></a-entity>
+          <a-entity text="value:To know more about this audio player, tap here; color:#fff; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0 0.28 0" id="faq" class="clickable" ></a-entity>
 
           <a-entity geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double; color:#f00" position="0.025 0.05 0" scale="0.03 0.03 0.03"></a-entity>
           <a-entity text="value:+12Volts; color:#f00; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1 1 1" position="0.45 0.08 0"></a-entity>
@@ -95,8 +95,8 @@
     </a-scene>
        <script type="text/javascript">
        // detect click event
-           const FAQ = document.querySelector('#FAQ');
-           FAQ.addEventListener("click", event => {
+           const faq = document.querySelector('#faq');
+           faq.addEventListener("click", event => {
            console.log("text click");
             window.open("http://www.google.com/");
          });
