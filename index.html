@@ -15,8 +15,8 @@
       <img id="snap">
       <p id="error-message"></p>
       <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons"></i></a>
-      <!-- <a href="#" id="take-photo" title="Take Photo"><i class="material-icons"></i></a>
-      <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons"></i></a>-->
+      <a href="#" id="take-photo" title="Take Photo"><i class="material-icons"></i></a>
+      <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled"><i class="material-icons"></i></a>
     </div>
   </div>
     <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
@@ -120,9 +120,9 @@
      var image = document.querySelector('#snap'),
      //start_camera = document.querySelector('#start-camera'),
      controls = document.querySelector('.controls'),
-     take_photo_btn = document.querySelector('#faq'),
+     take_photo_btn = document.querySelector('#take-photo'),
      delete_photo_btn = document.querySelector('#delete-photo'),
-     download_photo_btn = document.querySelector('#faq');
+     download_photo_btn = document.querySelector('#download-photo');
      //error_message = document.querySelector('#error-message');
 
      take_photo_btn.addEventListener("click", function(e){
@@ -185,8 +185,6 @@
 
        // Turn the canvas image into a dataURL that can be used as a src for our photo.
        return hidden_canvas.toDataURL('image/png');
-       hidden_canvas.setAttribute("download", "AR.png");
-       video.play();
      }
      }
 
