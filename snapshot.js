@@ -16,12 +16,11 @@ document.getElementById("snap-button").addEventListener("click", function() {
 	let frame = captureVideoFrame("video", "png");
 	aScene = resizeCanvas(aScene, frame.width, frame.height);
 	frame = frame.dataUri;
-	mergeImages([frame, aScene]).then(b64 => {
+
 		let link = document.getElementById("download-link", "png");
 		link.setAttribute("download", "AR.png");
 		link.setAttribute("href", b64);
 		link.click();
-	});
 });
 function captureVideoFrame(video, format, width, height) {
         if (typeof video === 'string') {
