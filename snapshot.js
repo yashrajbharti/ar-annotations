@@ -9,7 +9,7 @@ function resizeCanvas(origCanvas, width, height) {
 	return resizedCanvas.toDataURL();
 }
 
-document.getElementById("snap-button").addEventListener("click", function() {
+document.getElementById("faq").addEventListener("targetFound", function() {
 	let aScene = document
 		.querySelector("a-scene")
 		.components.screenshot.getCanvas("perspective");
