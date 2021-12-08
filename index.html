@@ -22,7 +22,7 @@
       transform: translate(5px,5px);
       background-color: #FF10F0;
       margin: 20px;
-      visibility: hidden;
+      /* visibility: hidden; */
     }
     button:active{
       border: 2px solid #FF10F0;
@@ -136,12 +136,12 @@
         snaptarget.addEventListener("targetFound", event => {
         console.log("snap target found");
       //  document.getElementById("snap-button").click();
-        document.getElementById("snap-button").style.visibility = "visible";
+      //  document.getElementById("snap-button").style.visibility = "visible";
         });
         // detect target lost
         snaptarget.addEventListener("targetLost", event => {
         console.log("snap target lost");
-        document.getElementById("snap-button").style.visibility = "hidden";
+      //  document.getElementById("snap-button").style.visibility = "hidden";
 
         });
         </script>
