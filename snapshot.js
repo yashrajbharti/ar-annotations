@@ -19,7 +19,7 @@ document.getElementById("snap-button").addEventListener("click", function() {
 
 		let link = document.getElementById("download-link", "png");
 		link.setAttribute("download", "AR.png");
-		link.setAttribute("href", b64);
+		link.setAttribute("href", frame);
 		link.click();
 });
 function captureVideoFrame(video, format, width, height) {
