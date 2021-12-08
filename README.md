@@ -31,6 +31,19 @@ Let's try the right part of the audio player.
   
 As we haven't enabled multi-tracks, so simultaneus detection on more than one image target won't work here. Having the default multi-track value 1 improves the performance of the AR and we want that to happen.
   
+##  Ways to Snapshot 📸
+  
+There are multiple approaches to take a snapshot once the AR annotations are loaded. Let's see all of them and we shall use the most efficient one.
+  
+* **Snapshot every time the image target is found:** This way works well for the first time but freezes from the next occurrence and onwards. The reason is your browser asking for permission to "download multiple images", which affects the load of AR annotations here.
+* **Snapshot button:** This is the most optimized solution, it's least affected by the freeze due to multiple image downloads. The only thing is the button is non AR and it stays and occupies a part of your screen at all times.
+* **Snapshot button but visibility hidden:** Here we only show the button when the image target is found. It's less optimized as it slows the process of loading AR content.
+* **Snapshot glTF button:** Here a 3D model that loads along with the AR annotations does the job for you. It snapshots on click but it too shows a freezing effect.
+* **Image target bind to snapshot button:** Here the snapshot button is clicked whenever image target is found. It's slightly better than finding the image target directly and taking snapshot but little less optimal than having the snapshot button at all times to take pictures.
+
+
+
+  
 ## Wrapping up
 
 The above setup works for the Audio Player I chose. The same code with a few adjuestments in entity's postion will allow it to work on any object (hardware device). Only changes to be made for accomplishing this are changing the target image and creating it's respective targets.mind file. Lastly, the smoothness value is set to high, it may cause a *lazy effect* on detection but this actually is helpful to prevent flickering of the annotations.
