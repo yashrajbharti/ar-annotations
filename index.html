@@ -120,6 +120,11 @@
            console.log("text click");
             window.open("https://en.wikipedia.org/wiki/Audio_player");
          });
+         // detect target found
+        const faqtext = document.querySelector('#faqtext');
+        faqtext.addEventListener("targetFound", event => {
+        console.log("target found");
+        });
         </script>
         <script src="snapshot.js" charset="utf-8"></script>
 
