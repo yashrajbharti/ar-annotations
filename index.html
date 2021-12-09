@@ -130,11 +130,11 @@
        <script src="snapshot.js" charset="utf-8"></script>
        <script type="text/javascript">
        // detect click event
-           const faq = document.querySelector('#faq');
-           faq.addEventListener("click", event => {
-           console.log("text click");
-            window.open("https://en.wikipedia.org/wiki/Audio_player");
-         });
+         //   const faq = document.querySelector('#faq');
+         //   faq.addEventListener("click", event => {
+         //   console.log("text click");
+         //    window.open("https://en.wikipedia.org/wiki/Audio_player");
+         // });
 
        //   const cam = document.querySelector('#cam');
        //   cam.addEventListener("click", event => {
@@ -150,6 +150,30 @@
       //  document.getElementById("snap-button").click();
       //  document.getElementById("snap-button").style.visibility = "visible";
         });
+
+
+        const sceneEl = document.querySelector('a-scene');
+        const faq = document.getElementById('faq')
+        faq.addEventListener('click', (event) => {
+
+        console.log("snap target clicked");
+      // Create new entity for the new object
+      const newElement = document.createElement('a-entity')
+      // The raycaster gives a location of the touch in the scene
+         const touchPoint = event.detail.intersection.point
+         console.log(touchPoint);
+         newElement.setAttribute('position', touchPoint)
+         newElement.setAttribute('visible', 'false')
+         newElement.setAttribute('scale', '0.01 0.01 0.01')
+         newElement.setAttribute('gltf-model', '#camera-icon')
+         sceneEl.appendChild(newElement)
+         newElement.setAttribute('position', 0 -0.3 0)
+    //  newElement.setAttribute('offset', '-455 -401 2975')
+
+         newElement.addEventListener('model-loaded', () => {
+         newElement.setAttribute('visible', 'true')
+      })
+    });
 
         </script>
 
