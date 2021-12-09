@@ -159,6 +159,7 @@
           const newElement = document.createElement('a-entity')
           // The raycaster gives a location of the touch in the scene
           const touchPoint = event.detail.intersection.point
+          console.log(touchPoint);
           newElement.setAttribute('position', touchPoint)
           newElement.setAttribute('visible', 'false')
           newElement.setAttribute('scale', '0.001 0.001 0.001')
