@@ -36,7 +36,7 @@
     }
 
     </style>
-    <a-scene  id="scene" mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
       <canvas></canvas>
 
 
@@ -144,36 +144,13 @@
 
 
          // detect target found
-        // const snaptarget = document.querySelector('#snapshot-target');
-        // snaptarget.addEventListener("targetFound", event => {
-        // console.log("snap target found");
+        const snaptarget = document.querySelector('#snapshot-target');
+        snaptarget.addEventListener("targetFound", event => {
+        console.log("snap target found");
       //  document.getElementById("snap-button").click();
       //  document.getElementById("snap-button").style.visibility = "visible";
-        // });
-
-
-
-        const sceneEl = document.querySelector('a-scene');
-        const scene = document.getElementById('scene')
-        scene.addEventListener('click', (event) => {
-          console.log("snap target clicked");
-          // Create new entity for the new object
-          const newElement = document.createElement('a-entity')
-          // The raycaster gives a location of the touch in the scene
-          const touchPoint = event.detail.intersection.point
-          console.log(touchPoint);
-          newElement.setAttribute('position', touchPoint)
-          newElement.setAttribute('visible', 'false')
-          newElement.setAttribute('scale', '0.001 0.001 0.001')
-          newElement.setAttribute('gltf-model', '#camera-icon')
-          sceneEl.appendChild(newElement)
-          newElement.setAttribute('position', touchPoint)
-        //  newElement.setAttribute('offset', '-455 -401 2975')
-
-          newElement.addEventListener('model-loaded', () => {
-          newElement.setAttribute('visible', 'true')
-          })
         });
+
         </script>
 
   </body>
