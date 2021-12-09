@@ -6,10 +6,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="image-aframe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-    <script src="https://unpkg.com/aframe-click-drag-component"></script>
-    <script>
-       registerAframeClickDragComponent(window.AFRAME);
-    </script>
+
   </head>
   <body>
     <div style="position: absolute; z-index: 1000">
@@ -92,7 +89,7 @@
           <!-- <a-entity id="cam" gltf-model="#camera-icon" class="clickable" position="0 -0.3 0" rotation="0 0 0" scale="0.01 0.01 0.01"></a-entity> -->
 
 
-          <a-entity click-drag geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double; color:#f00" position="0.025 0.05 0" scale="0.03 0.03 0.03"></a-entity>
+          <a-entity geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double; color:#f00" position="0.025 0.05 0" scale="0.03 0.03 0.03"></a-entity>
           <a-entity text="value:+12Volts; color:#f00; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1 1 1" position="0.45 0.08 0"></a-entity>
 
           <a-entity geometry="primitive: ring; radiusInner: 0.9; radiusOuter: 1" material="side: double; color:#00f" position="0.14 0.06 0" scale="0.03 0.03 0.03"></a-entity>
