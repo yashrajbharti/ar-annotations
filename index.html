@@ -164,7 +164,9 @@
           newElement.setAttribute('visible', 'false')
           newElement.setAttribute('scale', '0.001 0.001 0.001')
           newElement.setAttribute('gltf-model', '#avatarModel')
-          this.el.sceneEl.appendChild(newElement)
+          sceneEl.appendChild(newElement)
+          newElement.setAttribute('position', touchPoint)
+
           newElement.addEventListener('model-loaded', () => {
             // Once the model is loaded, we are ready to show it popping in using an animation
             newElement.setAttribute('visible', 'true')
