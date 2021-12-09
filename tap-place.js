@@ -15,7 +15,7 @@ const newElement = document.createElement('a-entity')
   primitive: ring, radiusInner: 0.9, radiusOuter: 1
 }, true);
  newElement.setAttribute('material', {
-  side: double, color:#0f0
+  side: double
 }, true);
 
  snaptarget.appendChild(newElement)
