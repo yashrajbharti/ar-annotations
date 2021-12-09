@@ -37,7 +37,7 @@
 
     </style>
     <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
-      <canvas></canvas>
+      <canvas id="canvas"></canvas>
 
 
       <a-assets>
@@ -82,7 +82,7 @@
 
         </a-entity>
 
-        <a-entity id="snapshot-target" class="clickable" mindar-image-target="targetIndex: 1 smoothCount: 0 smoothTolerance: 0.0001 smoothThreshold: 0">
+        <a-entity id="snapshot-target" mindar-image-target="targetIndex: 1 smoothCount: 0 smoothTolerance: 0.0001 smoothThreshold: 0">
           <a-entity id="faqtext" text="value:To know more about this audio player, tap here; color:#000; shader: msdf; font:./aclonica/Aclonica-Regular.json;" scale="1.2 1.2 1.2" position="0 0.28 0"></a-entity>
           <a-plane id="faq" class="clickable" color="#fff" opaciy="0.5" position="-0.065 0.3 -0.0000001" height="0.08" width="1.1" rotation="0 0 0"></a-plane>
           <!-- <a-entity id="cam" gltf-model="#camera-icon" class="clickable" position="0 -0.3 0" rotation="0 0 0" scale="0.01 0.01 0.01"></a-entity> -->
@@ -127,14 +127,14 @@
 
 
     </a-scene>
-
+       <script src="snapshot.js" charset="utf-8"></script>
        <script type="text/javascript">
        // detect click event
-         //   const faq = document.querySelector('#faq');
-         //   faq.addEventListener("click", event => {
-         //   console.log("text click");
-         //    window.open("https://en.wikipedia.org/wiki/Audio_player");
-         // });
+           const faq = document.querySelector('#faq');
+           faq.addEventListener("click", event => {
+           console.log("text click");
+            window.open("https://en.wikipedia.org/wiki/Audio_player");
+         });
 
        //   const cam = document.querySelector('#cam');
        //   cam.addEventListener("click", event => {
@@ -151,9 +151,11 @@
       //  document.getElementById("snap-button").style.visibility = "visible";
         // });
 
+
+
         const sceneEl = document.querySelector('a-scene');
-        const faq = document.getElementById('faq')
-        faq.addEventListener('click', (event) => {
+        const canvas = document.getElementById('canvas')
+        canvas.addEventListener('click', (event) => {
           console.log("snap target clicked");
           // Create new entity for the new object
           const newElement = document.createElement('a-entity')
@@ -166,14 +168,13 @@
           newElement.setAttribute('gltf-model', '#avatarModel')
           sceneEl.appendChild(newElement)
           newElement.setAttribute('position', touchPoint)
-          newElement.setAttribute('offset', '-455 -401 2975')
+        //  newElement.setAttribute('offset', '-455 -401 2975')
 
           newElement.addEventListener('model-loaded', () => {
-            newElement.setAttribute('visible', 'true')
+          newElement.setAttribute('visible', 'true')
           })
         });
         </script>
-        <script src="snapshot.js" charset="utf-8"></script>
 
   </body>
 </html>
