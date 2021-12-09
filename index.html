@@ -141,12 +141,12 @@
        //    document.getElementById("snap-button").click();
        // });
          // detect target found
-        const snaptarget = document.querySelector('#snapshot-target');
-        snaptarget.addEventListener("targetFound", event => {
-        console.log("snap target found");
+        // const snaptarget = document.querySelector('#snapshot-target');
+        // snaptarget.addEventListener("targetFound", event => {
+        // console.log("snap target found");
       //  document.getElementById("snap-button").click();
       //  document.getElementById("snap-button").style.visibility = "visible";
-        });
+        // });
         // detect target lost
         snaptarget.addEventListener("targetLost", event => {
         console.log("snap target lost");
@@ -154,8 +154,8 @@
 
         });
 
-        const snaptarget2 = document.getElementById('snapshot-target')
-        snaptarget2.addEventListener('click', (event) => {
+        const snaptarget = document.getElementById('snapshot-target')
+        snaptarget.addEventListener('click', (event) => {
           console.log("snap target clicked");
           // Create new entity for the new object
           const newElement = document.createElement('a-entity')
