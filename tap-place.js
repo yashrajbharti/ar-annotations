@@ -11,13 +11,7 @@ const newElement = document.createElement('a-entity')
  newElement.setAttribute('position', touchPoint)
  newElement.setAttribute('visible', 'false')
  newElement.setAttribute('scale', '0.01 0.01 0.01')
- newElement.setAttribute('geometry', {
-  primitive: ring, radiusInner: 0.9, radiusOuter: 1
-}, true);
- newElement.setAttribute('material', {
-  side: double
-}, true);
-
+ newElement.setAttribute('gltf-model', '#camera-icon')
  snaptarget.appendChild(newElement)
  newElement.setAttribute('position', '0 -0.3 0')
 //  newElement.setAttribute('offset', '-455 -401 2975')
