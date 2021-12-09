@@ -154,8 +154,8 @@
 
         });
 
-        const snaptarget = document.getElementById('snapshot-target')
-        snaptarget.addEventListener('click', (event) => {
+        const snaptarget2 = document.getElementById('snapshot-target')
+        snaptarget2.addEventListener('click', (event) => {
           // Create new entity for the new object
           const newElement = document.createElement('a-entity')
           // The raycaster gives a location of the touch in the scene
@@ -173,7 +173,7 @@
             // Once the model is loaded, we are ready to show it popping in using an animation
             newElement.setAttribute('visible', 'true')
           })
-        })
+        });
         </script>
         <script src="snapshot.js" charset="utf-8"></script>
 
