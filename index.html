@@ -36,8 +36,8 @@
     }
 
     </style>
-    <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
-      <canvas id="canvas"></canvas>
+    <a-scene  id="scene" mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" loading-screen="enabled: false">
+      <canvas></canvas>
 
 
       <a-assets>
@@ -154,8 +154,8 @@
 
 
         const sceneEl = document.querySelector('a-scene');
-        const canvas = document.getElementById('canvas')
-        canvas.addEventListener('click', (event) => {
+        const scene = document.getElementById('scene')
+        scene.addEventListener('click', (event) => {
           console.log("snap target clicked");
           // Create new entity for the new object
           const newElement = document.createElement('a-entity')
