@@ -130,11 +130,12 @@
 
        <script type="text/javascript">
        // detect click event
-           const faq = document.querySelector('#faq');
-           faq.addEventListener("click", event => {
-           console.log("text click");
-            window.open("https://en.wikipedia.org/wiki/Audio_player");
-         });
+         //   const faq = document.querySelector('#faq');
+         //   faq.addEventListener("click", event => {
+         //   console.log("text click");
+         //    window.open("https://en.wikipedia.org/wiki/Audio_player");
+         // });
+
        //   const cam = document.querySelector('#cam');
        //   cam.addEventListener("click", event => {
        //   console.log("gltf click");
@@ -151,8 +152,8 @@
         // });
 
 
-        const faq2 = document.getElementById('faq')
-        faq2.addEventListener('click', (event) => {
+        const faq = document.getElementById('faq')
+        faq.addEventListener('click', (event) => {
           console.log("snap target clicked");
           // Create new entity for the new object
           const newElement = document.createElement('a-entity')
