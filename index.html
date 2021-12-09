@@ -6,7 +6,6 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="image-aframe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-    <script src="tap-annotations.js" charset="utf-8"></script>
   </head>
   <body>
     <div style="position: absolute; z-index: 1000">
@@ -154,6 +153,27 @@
       //  document.getElementById("snap-button").style.visibility = "hidden";
 
         });
+
+        const snaptarget = document.getElementById('snapshot-target')
+        snaptarget.addEventListener('click', (event) => {
+          // Create new entity for the new object
+          const newElement = document.createElement('a-entity')
+          // The raycaster gives a location of the touch in the scene
+          const touchPoint = event.detail.intersection.point
+          newElement.setAttribute('position', touchPoint)
+
+          newElement.setAttribute('visible', 'false')
+          newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
+          newElement.setAttribute('shadow', {
+            receive: false,
+          })
+          newElement.setAttribute('gltf-model', '#avatarModel')
+          this.el.sceneEl.appendChild(newElement)
+          newElement.addEventListener('model-loaded', () => {
+            // Once the model is loaded, we are ready to show it popping in using an animation
+            newElement.setAttribute('visible', 'true')
+          })
+        })
         </script>
         <script src="snapshot.js" charset="utf-8"></script>
 
