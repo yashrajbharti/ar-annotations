@@ -166,9 +166,9 @@
           newElement.setAttribute('gltf-model', '#avatarModel')
           sceneEl.appendChild(newElement)
           newElement.setAttribute('position', touchPoint)
+          newElement.setAttribute('offset', '-455 -401 2975')
 
           newElement.addEventListener('model-loaded', () => {
-            // Once the model is loaded, we are ready to show it popping in using an animation
             newElement.setAttribute('visible', 'true')
           })
         });
